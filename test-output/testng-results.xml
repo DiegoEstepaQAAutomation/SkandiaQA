@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-07T08:58:22 COT" name="Suite" finished-at="2022-09-07T08:58:48 COT" duration-ms="26000">
+    <groups>
+    </groups>
+    <test started-at="2022-09-07T08:58:22 COT" name="Test" finished-at="2022-09-07T08:58:48 COT" duration-ms="26000">
+      <class name="Run.EjemploTestNG">
+        <test-method is-config="true" signature="beforeClass(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Run.EjemploTestNG@3a6bb9bf]" started-at="2022-09-07T08:58:22 COT" name="beforeClass" finished-at="2022-09-07T08:58:34 COT" duration-ms="12746" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[./imagenes/logo_periferia.png]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[./output/]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[R9YT41BNT6N]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[11]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[com.oldmutual.mobileapp2]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[com.example.skandia.MainActivity]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="Ingresar_Direccion(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Run.EjemploTestNG@3a6bb9bf]" started-at="2022-09-07T08:58:35 COT" name="Ingresar_Direccion" description="Logueo" data-provider="AppClaro" finished-at="2022-09-07T08:58:48 COT" duration-ms="12608" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SI]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SI]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[-70907261]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[104422620]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[prueba1234]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Ingresar_Direccion -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Run.EjemploTestNG@3a6bb9bf]" started-at="2022-09-07T08:58:48 COT" name="afterClass" finished-at="2022-09-07T08:58:48 COT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Run.EjemploTestNG -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

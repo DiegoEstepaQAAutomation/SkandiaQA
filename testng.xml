@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<!-- Capabilities de android  -->
+<parameter name="rutaOutput" value="./output/"></parameter>
+<parameter name="rutaImagenReporte" value="./imagenes/logo_periferia.png"></parameter>
+<parameter name="platformName" value="Android"></parameter>
+<parameter name="deviceName" value="R9YT41BNT6N"></parameter>
+<parameter name="platfotmVersion" value="11"></parameter>
+<parameter name="appPackage" value="com.oldmutual.mobileapp2"></parameter>
+<parameter name="appActivity" value="com.example.skandia.MainActivity"></parameter>
+<parameter name="noReset" value="true"></parameter>
+<parameter name="autoGrantPermissior" value="true"></parameter>
+
+
+
+<!-- Capabilities de Ios -->
+<parameter name="platformName2" value="iOS"></parameter>
+<parameter name="deviceName2" value="XXXXXXXX"></parameter>
+<parameter name="platformVersion2" value="15.6.4"></parameter>
+<parameter name="appPackage2" value=".appskandia"></parameter>
+<parameter name="noReset1" value="true"></parameter>
+<parameter name="autoGrantPermissior1" value="true"></parameter>
+
+  <test name="Test">
+    <classes>
+      <class name="Run.EjemploTestNG"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
