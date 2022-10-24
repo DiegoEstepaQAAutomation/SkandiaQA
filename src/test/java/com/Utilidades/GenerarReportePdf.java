@@ -32,23 +32,25 @@ public class GenerarReportePdf
 	String rutaImagen;
 	String hora;
 	String horaIni,horaFin;
-
+	
 	public void setRutaImagen(String rutaImagen)
 	{
 		this.rutaImagen = rutaImagen;
 	}
 
-	public void crearPlantilla(String nomTest, File rutaCarpeta)
+	public void crearPlantilla(String nomTest, File rutaCarpeta,String Evidencia)
 	{		
 		//INSTANCIAR DOCUMENTO
 		documento = new Document();
-		
 		//TOMAR LA HORA DEL SISTEMA 
 		 hora = ClaseBaseFinalMobil.fechaHora();
 		 horaIni = ClaseBaseFinalMobil.fechaHora2();
+
+		
 		 
 		try 
 		{
+			if(Evidencia.equals("SI")) {
 			//CREAR RUTA Y NOMBRE DEL PDF
 			archivo = new FileOutputStream(rutaCarpeta+"\\"+"Reporte-"+nomTest +"-"+ hora+".pdf"); 
 			PdfWriter.getInstance (documento, archivo);
@@ -85,6 +87,12 @@ public class GenerarReportePdf
 			documento.add(table);
 						
 			documento.add(Chunk.NEWLINE);
+		} 	
+			else 
+			{
+				System.out.println("NO SE GENERO EVIDENCIA EN PDF");
+			}
+			
 		}
 		catch (FileNotFoundException e) 
 		{			

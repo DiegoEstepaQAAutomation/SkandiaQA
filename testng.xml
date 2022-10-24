@@ -14,18 +14,44 @@
 
 
 
-<!-- Capabilities de Ios -->
-<parameter name="platformName2" value="iOS"></parameter>
-<parameter name="deviceName2" value="XXXXXXXX"></parameter>
-<parameter name="platformVersion2" value="15.6.4"></parameter>
-<parameter name="appPackage2" value=".appskandia"></parameter>
-<parameter name="noReset1" value="true"></parameter>
-<parameter name="autoGrantPermissior1" value="true"></parameter>
+	
+<!-- com.example.skandia-->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Capabilities de Ios -->
+
+<!--<parameter name="appium:app" value="Users/periferia/Desktop/skandia.app"></parameter>
+<parameter name="appium:deviceName" value="Iphone 8 Plus(14.4)"></parameter>
+<parameter name="appium:platformVersion" value="14.4"></parameter>
+<parameter name="appium:udid" value="973735A8-310E-413A-A349-DCF95A8D6AED"></parameter>
+<parameter name="appium:automationName" value="XCUITest"></parameter>
+<parameter name="platformName" value="iOS"></parameter>
+ -->
   <test name="Test">
     <classes>
       <class name="Run.EjemploTestNG"/>
     </classes>
+    
+    
+    
   </test> <!-- Test -->
 </suite> <!-- Suite -->
 

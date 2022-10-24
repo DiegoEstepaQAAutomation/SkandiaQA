@@ -24,8 +24,7 @@ public class PagsObjetCambioDireccion extends MapsObjectCambioDireccion
 	public void Certificados_576099(String Documento, String Evidencia,File rutaCarpeta) throws Exception {
 	
 		//DEBE DARSE CLICK NO SOLO AL MODULO CERTIFICADOS SINO TAMBIEN AL CAMPO DE DOCUMENTO 
-		
-		click2(btnCertificado, 10, rutaCarpeta, Evidencia);
+		tocarPantalla(90, 1386);
 		click2(txtNumeroDocumento, 5, rutaCarpeta, Evidencia);
 		click2(btntipoCC, 5, rutaCarpeta, Evidencia);
 		sendkey2(Documento, txtNumeroDocumento, 5, rutaCarpeta, Evidencia);
@@ -52,6 +51,56 @@ public class PagsObjetCambioDireccion extends MapsObjectCambioDireccion
 		//listRandom(btntipoCC);
 		
 	}
+	
+	public void ValidacionesCertificadoCC_595718(String Evidencia,File rutaCarpeta) throws Exception 
+	
+	{
+		//DEBE DARSE CLICK NO SOLO AL MODULO CERTIFICADOS SINO TAMBIEN AL CAMPO DE DOCUMENTO 
+				
+				
+				
+				tiempoEspera(9000);
+				tocarPantalla(90, 1386);
+				click2(btntipoCC, 0, rutaCarpeta, Evidencia);
+				click2(CCopcion, 0, rutaCarpeta, Evidencia);
+				
+				click3(txtNumeroDocumento, 5, rutaCarpeta, Evidencia, "Caso exitoso 595719");
+				
+				sendkey("19992832", txtNumeroDocumento, rutaCarpeta, Evidencia);		
+				
+				//Enviar a una variable de tipo booleano los botones para certificar que ya ingresa a certificados(botones aun no tienen desarrollada la funcionalidad)
+				//boolean afiliacion = validarElemento(btnAfiliacion, 5);
+				//ValidacionObjeto(afiliacion, "Caso certificados de afiliacion", rutaCarpeta, Evidencia, btnAfiliacion);
+				
+				click2(btnAfiliacion, 10, rutaCarpeta, Evidencia);
+				
+				click2(btnAceptar, 5, rutaCarpeta, Evidencia);
+				
+				//boolean tributarios = validarElemento(btnTributarios, 5);
+				//ValidacionObjeto(tributarios, "Caso certificados", rutaCarpeta, Evidencia, btnAfiliacion);
+				
+				click2(btnTributarios, 10, rutaCarpeta, Evidencia);
+				
+				click2(btnAceptar, 5, rutaCarpeta, Evidencia);
+				
+				//boolean extractos = validarElemento(btnAfiliacion, 5);
+				//ValidacionObjeto(extractos, "Caso certificados", rutaCarpeta, Evidencia, btnAfiliacion);
+				
+				click2(btnAfiliacion, 10, rutaCarpeta, Evidencia);
+				
+				
+				click2(btnAceptar, 5, rutaCarpeta, Evidencia);
+				//CLICKS
+				
+				
+				click2(btnback, 5, rutaCarpeta, Evidencia);
+			
+		
+		
+				 
+	} 
+	
+	
 	
 	//Metodo para ingresar al modulo de rentabilidades 
 	public void rentabilidades_576109(String Documento, String Evidencia,File rutaCarpeta) throws Exception {
@@ -139,8 +188,8 @@ public class PagsObjetCambioDireccion extends MapsObjectCambioDireccion
 		boolean Btnyoutube = validarElemento(btnyoutube, 5);
 		ValidacionObjeto(Btnyoutube, "Caso certificados", rutaCarpeta, Evidencia, btnyoutube);
 		//Se crean variables booleanas que contienen los botones de llamada y correo porque a fecha de hoy 2/09/2022 aun no son funcionales
-		boolean Btninstagram = validarElemento(btnyoutube, 5);
-		ValidacionObjeto(Btninstagram, "Caso certificados", rutaCarpeta, Evidencia, btnyoutube);
+		boolean Btninstagram = validarElemento(btnInstagram, 5);
+		ValidacionObjeto(Btninstagram, "Caso certificados", rutaCarpeta, Evidencia, btnInstagram);
 		
 		
 		
@@ -153,8 +202,19 @@ public class PagsObjetCambioDireccion extends MapsObjectCambioDireccion
 		click2(CorreoEmpresarial, 5, rutaCarpeta, Evidencia);
 		tocarPantalla(200, 700);
 		
-		//click2(LineaBogota, 5, rutaCarpeta, Evidencia);
+		//232, 661
+		scrollVertical1(rutaCarpeta, 643, 988, 743, 5, Evidencia);
+		
+		tocarPantalla(657, 1358);
+		
+		//232, 661
+		scrollVertical1(rutaCarpeta, 643, 800, 980, 5, Evidencia);
+		
+		click2(telNacional, 5, rutaCarpeta, Evidencia);
 		tocarPantalla(232, 661);
+		
+		
+		
 		
 		//232,661
 		//LineaBogotaFijo
@@ -162,8 +222,8 @@ public class PagsObjetCambioDireccion extends MapsObjectCambioDireccion
 		//click2(btnback, 5, rutaCarpeta, Evidencia);
 		
 		//En este caso empleamos una aplicacion que nos permite iniciar una grabacion de voz describiemdo paso a paso esta automatizacion
-		tocarPantalla(692, 1025);
-		tocarPantalla(346, 1026);
+		
+		
 		
 	}
 	

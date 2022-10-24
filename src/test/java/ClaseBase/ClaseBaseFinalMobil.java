@@ -30,6 +30,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -49,6 +50,7 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.screenrecording.CanRecordScreen;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+
 
 public class ClaseBaseFinalMobil {
 
@@ -136,7 +138,8 @@ public class ClaseBaseFinalMobil {
 			try {
 				printConsola("Cargando Cability de appium, por favor espere...");
 				_driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
-			} catch (MalformedURLException e) {
+			} 
+			catch (MalformedURLException e) {
 				printConsola(e.getMessage());
 			}
 			return _driver;
@@ -145,7 +148,16 @@ public class ClaseBaseFinalMobil {
 		}
 		return _driver;
 	}
+	
+				
 
+	public void ventana(By locator) throws Exception
+	{
+		driver.findElementById("android:id/content").findElement(locator).click();
+		
+	}
+	
+	
 // METODO CLICK
 	public void click(By locator, File rutaCarpeta, String Evidencia) throws Exception {
 		try {
@@ -161,12 +173,67 @@ public class ClaseBaseFinalMobil {
 	//METOD CLICK 2 ESPERAR MAXIMO 10 SEGUNDOS
 	
 	public void click2(By locator, int t, File rutaCarpeta, String Evidencia) throws Exception {
-        try {
+       
+		try {
             WebDriverWait wait = new WebDriverWait(driver, t);
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
             tiempoEspera(1);
             driver.findElement(locator).click();
             captureScreen2(rutaCarpeta, locator, Evidencia);
+            //capture(rutaCarpeta, locator, Evidencia);
+            
+            //aca
+            } catch(Exception e) {
+            captureScreenError(rutaCarpeta, locator, Evidencia, e.toString());
+            throw new InterruptedException();
+            
+            //aca
+            } 
+		
+	}
+	
+	public void click4(By locator, int t) throws Exception {
+	       
+		try {
+			
+            WebDriverWait wait = new WebDriverWait(driver, t);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            tiempoEspera(1);
+            driver.findElement(locator).click();
+           
+            //capture(rutaCarpeta, locator, Evidencia);
+
+            } catch(Exception e) {
+          
+            throw new InterruptedException();
+            
+            } 
+		
+	}
+	
+	// METODO ENVIAR TEXTO
+		public void sendkeyA(String inputText, By locator) throws Exception {
+			try {
+				driver.findElement(locator).sendKeys(inputText);
+				
+			} catch (Exception e) {
+				
+				throw new InterruptedException();
+			}
+
+		}
+
+
+       
+	
+	
+	public void click3(By locator, int t, File rutaCarpeta, String Evidencia,String msnPaso) throws Exception {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, t);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            tiempoEspera(1);
+            driver.findElement(locator).click();
+            captureScreen3(rutaCarpeta, locator, Evidencia, msnPaso);
             //capture(rutaCarpeta, locator, Evidencia);
 
             } catch(Exception e) {
@@ -175,6 +242,21 @@ public class ClaseBaseFinalMobil {
             
             }
        }
+
+	
+	public void KeysWrite(String text) 
+	{
+		Keys.valueOf(text);
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	//captureScreen3
 
 // METODO BORRAR
 	public void borrar(By locator, File rutaCarpeta, String Evidencia) throws Exception {
@@ -217,6 +299,23 @@ public class ClaseBaseFinalMobil {
             
             }
        }
+	
+	// METODO ENVIAR TEXTO 2 MAXIMO 10
+	public void sendkey3(String inputText,By locator, int t, File rutaCarpeta, String Evidencia,String msn) throws Exception {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, t);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            tiempoEspera(1);
+            driver.findElement(locator).sendKeys(inputText);
+            captureScreen3(rutaCarpeta, locator, Evidencia, msn);
+            //capture(rutaCarpeta, locator, Evidencia);
+
+            } catch(Exception e) {
+            captureScreenError(rutaCarpeta, locator, Evidencia, e.toString());
+            throw new InterruptedException();
+            
+            }
+       }
 
 // METODO ENTER SUBMIN
 	public void submit(By locator, File rutaCarpeta, String Evidencia) throws Exception {
@@ -247,6 +346,27 @@ public class ClaseBaseFinalMobil {
 		}
 
 	}
+	
+	//Metodo de darle escape a la pagina
+	public void escape() {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ESCAPE).build().perform();
+	}
+	
+	
+	
+	// METODO CONTROL + A
+		public void comando2(By locator, File rutaCarpeta, String Evidencia) throws Exception {
+			try {
+				driver.findElement(locator).sendKeys(Keys.ESCAPE);
+				captureScreen2(rutaCarpeta, locator, Evidencia);
+			} catch (Exception e) {
+				captureScreenError(rutaCarpeta, locator, Evidencia, e.toString());
+				throw new InterruptedException();
+			}
+
+		}
+
 
 // METODO CONTROL + A
 	public void bspace(By locator, File rutaCarpeta, String Evidencia) throws Exception {
@@ -333,6 +453,17 @@ public class ClaseBaseFinalMobil {
 		return hora;
 	}
 	
+	public static String HoraSistema2() {
+		// TOMAMOS LA FECHA DEL SISTEMA
+				LocalTime horaSistema = LocalTime.now();
+
+		// DEFINIR FORMATO FECHA
+				DateTimeFormatter fecha = DateTimeFormatter.ofPattern("HHmmss");
+
+		// DAR FORMATO A LA FECHA DEL SISTEMA
+				String hora = fecha.format(horaSistema);
+				return hora;
+			}
 	
 	public void scroll() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -424,6 +555,11 @@ public class ClaseBaseFinalMobil {
 
 // ELIMINAR IMAGEN CREADA
 			eliminarArchivo(rutaImagen);
+		}else 
+		{
+			
+			System.out.println("Captura no tomada");
+			
 		}
 
 	}
@@ -454,6 +590,7 @@ public class ClaseBaseFinalMobil {
 		public void captureScreen3(File rutaCarpeta, By locator, String Evidencia,String msnExito) throws Exception {
 
 			if (Evidencia.equals("SI")) {
+				
 				String hora = HoraSistema();
 				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 				FileUtils.copyFile(scrFile, new File(rutaCarpeta + "\\" + hora + ".png"));
@@ -514,7 +651,10 @@ public class ClaseBaseFinalMobil {
 		fichero.delete();
 	}
 
-	public File crearCarpeta(String nomTest) {
+	public File crearCarpeta(String nomTest,String Evidencia) 
+	{
+		if(Evidencia.equals("SI")) 
+		{
 // ALMACENAMOS LA FECHA DEL SISTEMA
 		String fecha = fechaHora();
 
@@ -526,13 +666,42 @@ public class ClaseBaseFinalMobil {
 
 // CREAMOS LA CARPETA
 		directorio.mkdir();
-		return directorio;
-	}
+		return directorio; 
+		} 
+		else 
+		{
+			
+			printConsola("Carpeta no generada");
+			
+		}
+		return null;
+	} 
+	
+	
+	// METODO PARA CREAR CARPETA PARA CAPTURA
+		public static File createFolder(String nameFolder, String path, String evidence) {
+			if(evidence.equals("SI")) {
+				String fecha = fechaHora();
+				String hora = HoraSistema2();
+				String nomCarpeta = nameFolder + " " + fecha + " " + hora;
+				File directorio = new File(path + nomCarpeta);
+				directorio.mkdir();
+				return directorio;	
+			} else {
+				print("No se creara creara el Folder para evidencia");
+			}
+			return null;
+		}
+
 	
 	
 	
-	
-	//Se valida varios objetos que sea existente al convertirlo en un valor booleano de true o false
+	private static void print(String string) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		//Se valida varios objetos que sea existente al convertirlo en un valor booleano de true o false
 		public void ValidacionObjeto(boolean valor1, String caso, File rutaCarpeta,String Evidencia ,By locator) throws Exception 
 		
 		{
@@ -576,6 +745,37 @@ public class ClaseBaseFinalMobil {
 		 * @throws IOException Signals that an I/O exception has occurred.
 		 * @throws DocumentException the document exception
 		 */
+		
+		// METODO PARA ELIMINAR ARCHIVO
+		public void deleteFile(String rutaImagen) {
+			File fichero = new File(rutaImagen);
+			fichero.delete();
+		}
+		
+		
+
+	    public  byte[] screenshot(File rutaCarpeta, String accion,By locator) throws IOException, DocumentException {
+
+	        String hora = HoraSistema();
+
+	        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+	        //String rutaImagen = rutaCarpeta + "\\" + hora + "_"+funcion+".png";
+
+	        String rutaImagen = rutaCarpeta + "\\" + hora + ".png";
+
+	        FileUtils.copyFile(scrFile, new File(rutaImagen));
+
+	        GenerarReportePdf generarReportePdf = new GenerarReportePdf();
+			generarReportePdf.crearbody(locator, rutaImagen);
+
+	        deleteFile(rutaImagen);
+
+
+
+	        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+
+	    }
 	
 		
 		//Metodo para seleccionar de forma random elementos de una lista

@@ -20,8 +20,10 @@ public class MapsObjectCambioDireccion extends ClaseBaseFinalMobil
 	protected By btncerrarsesion = By.xpath("//android.widget.TextView[@resource-id='com.clarocolombia.miclaro.debug:id/tvCerrarSesion']");
 	protected By btnsalir = By.xpath("//android.widget.Button[@resource-id='com.clarocolombia.miclaro.debug:id/btn_aceptar']");
 	protected By btnCertificado = By.xpath("//android.view.View[@content-desc='Pestaña 1 de 4']/android.widget.ImageView");
-	protected By txtNumeroDocumento = By.xpath("//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText");
-	protected By btnAceptar = By.xpath("//android.widget.Button[@content-desc='Aceptar']");
+	protected By txtNumeroDocumento = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText");
+	protected By btnAceptar = By.xpath("//android.view.View[@content-desc='Aceptar']");
+	protected By CCopcion = By.xpath("//android.view.View[@content-desc='Cédula de ciudadanía']");
+	
 	
 	//Certificados
 	protected By btnAfiliacion = By.xpath("//android.widget.Button[@content-desc='AFILIACIÓN']");
@@ -49,7 +51,7 @@ public class MapsObjectCambioDireccion extends ClaseBaseFinalMobil
 	protected By Objetovalidacionesefectivo = By.xpath("//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View/android.widget.ListView/android.view.View[1]");
 	protected By Objetosegurodevida = By.xpath("//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View/android.widget.ListView/android.view.View");
 	protected By ObjetovalidacionValores = By.xpath( "//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View/android.widget.ListView/android.view.View");
-	protected By btnback = By.xpath("//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button");
+	protected By btnback = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button");
 	
 	//Canales de contacto 
 	
